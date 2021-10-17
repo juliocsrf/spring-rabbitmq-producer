@@ -19,7 +19,7 @@ public class EstoqueController {
 
     @RequestMapping(method = {RequestMethod.PUT})
     private ResponseEntity alteraEstoque(@RequestBody @Valid EstoqueDto estoqueDto) {
-        System.out.println(estoqueDto.codigoProduto);
+        System.out.println(estoqueDto.getCodigoProduto());
         this.rabbitMQService.enviamMensagem(RabbitMQConstants.FILA_ESTOQUE, estoqueDto);
         return new ResponseEntity(HttpStatus.OK);
     }

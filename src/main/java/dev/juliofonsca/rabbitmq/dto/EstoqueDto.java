@@ -1,15 +1,11 @@
 package dev.juliofonsca.rabbitmq.dto;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 public class EstoqueDto implements Serializable {
 
-    @NotNull
-    public String codigoProduto;
-
-    @NotNull
-    public int quantidade;
+    private String codigoProduto;
+    private int quantidade;
 
     public String getCodigoProduto() {
         return codigoProduto;

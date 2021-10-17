@@ -20,7 +20,7 @@ public class PrecoController {
 
     @PutMapping
     private ResponseEntity alteraPreco(@RequestBody PrecoDto precoDto) {
-        System.out.println(precoDto.codigoProduto);
+        System.out.println(precoDto.getCodigoProduto());
         this.rabbitMQService.enviamMensagem(RabbitMQConstants.FILA_PRECO, precoDto);
         return new ResponseEntity(HttpStatus.OK);
     }
